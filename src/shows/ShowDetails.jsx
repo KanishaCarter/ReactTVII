@@ -1,8 +1,3 @@
-import { useState } from 'react'
-import { tvShows } from './data'
-import { EpisodeDetails } from './EpisodeDetails.jsx'
-import { EpisodeList } from './EpisodeList.jsx'
-
 /*### ShowDetails
 
 1. `<ShowDetails>` takes a `show` as a prop.
@@ -22,33 +17,24 @@ name,
 export default function EpisodeDetails({ episode })
 */ 
 
-/** Allows users to browse through the episodes of the given show */
-export default function ShowDetails({show}) { /*name genre, episodes*/
+import { useState } from 'react'
+import { ShowSelection } from './ShowSelection'
+import { EpisodeDetails } from './episodes/EpisodeDetails'
+import { EpisodeList } from './episodes/EpisodeList'
 
-  const [selectedShow, setSelectedShow] = useState({});
+/** Allows users to browse through the episodes of the given show */
+export default function ShowDetails({ show }) { /*name genre, episodes*/
+  
+  const [show , setShow] = useState({show})
+  const [selectedEpisode, setSelectedEpisode] = useState({episode});
   
   return (
     <div className="show-details">
-      {(!show) ?
-      (<section>
-        <h3>Please select a show.</h3>
-        <h3>Shows List</h3>
-        <ol>
-          {tvShows.map((show)=> (
-            <li 
-            onClick={()=>(setSelectedShow(show))}>
-              {show.name}
-            </li>))}
-        </ol>
-      </section>)
-      :
-      (<h2>{show.name}</h2>
-        <ol>
-          {selectedShow.map((show))}
-        </ol>
-      )}
+      <h2>{show.name}</h2>
+      <p>Genre: {show.genre}</p>
+      <EpisodeList name={show.name} episodes={show.episodes} />
+      <EpisodeDetails episode={episode} />
     </div>
+
   )
-
-
 }
