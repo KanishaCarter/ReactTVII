@@ -14,14 +14,18 @@ import { ShowDetails } from './ShowDetails'
 /** A navbar that allows users to choose between a list of shows */
 export default function ShowSelection() {
 
-  const [show , setShow] = useState(null);
+  const [show, setShow] = useState(null);
 
   return (
-  <nav className="shows">
-    {tvShows.map((show)=> {
-      <p key={show.name} onClick={()=> setShow(show)}>{show.name}</p>}
-    )}
-    <ShowDetails show={show.name} />
-  </nav>
+    <div>
+      <nav className="shows">
+        {tvShows.map((show) => {
+          return (
+            <p key={show.name} onClick={() => setShow(show)}>{show.name}</p>)
+        })}
+      </nav>
+      <ShowDetails show={show} />
+    </div>
+
   )
 }
