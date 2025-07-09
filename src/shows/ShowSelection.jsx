@@ -24,7 +24,7 @@ export default function ShowSelection() {
             <p key={tvshow.name} onClick={() => setShow(tvshow)}>{tvshow.name}</p>)
         })}
       </nav>
-      <ShowDetails show={tvshow} />
+      <ShowDetails show={show} />
     </div>
 
   )
