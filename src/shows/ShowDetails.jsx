@@ -18,8 +18,8 @@ export default function EpisodeDetails({ episode })
 */
 
 import { useState } from 'react'
-import EpisodeDetails from '../episodes/EpisodeDetails'
-import EpisodeList from '../episodes/EpisodeList'
+import EpisodeDetails from './episodes/EpisodeDetails'
+import EpisodeList from './episodes/EpisodeList'
 
 /** Allows users to browse through the episodes of the given show */
 export default function ShowDetails({ show }) { /*name genre, episodes*/
