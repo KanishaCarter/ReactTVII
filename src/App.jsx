@@ -4,7 +4,8 @@
  */
 
 import {useState} from 'react'
-import {ShowDetails} from './shows/ShowDetails'
+import ShowSelection from './shows/ShowSelection'
+
 export default function App() {
   return (
     <>
@@ -12,8 +13,7 @@ export default function App() {
         <p>React TV</p>
       </header>
       <main>
-        {<ShowDetails />}
-
+        <ShowSelection />
       </main>
     </>
   );

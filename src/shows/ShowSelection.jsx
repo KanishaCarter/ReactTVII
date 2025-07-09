@@ -9,7 +9,7 @@ export const tvShows = [
 import "./shows.css";
 import { useState } from 'react'
 import { tvShows } from "./data";
-import { ShowDetails } from './ShowDetails'
+import ShowDetails from './ShowDetails'
 
 /** A navbar that allows users to choose between a list of shows */
 export default function ShowSelection() {
