@@ -19,12 +19,12 @@ export default function ShowSelection() {
   return (
     <div>
       <nav className="shows">
-        {tvShows.map((show) => {
+        {tvShows.map((tvshow) => {
           return (
-            <p key={show.name} onClick={() => setShow(show)}>{show.name}</p>)
+            <p key={tvshow.name} onClick={() => setShow(tvshow)}>{tvshow.name}</p>)
         })}
       </nav>
-      <ShowDetails show={show} />
+      <ShowDetails show={tvshow} />
     </div>
 
   )
